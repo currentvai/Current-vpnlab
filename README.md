@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://your-logo-link.com/logo.png" alt="Current VPN Toolkit Logo" width="200"/>
+  <img src="https://github.com/currentvai/Current-vpnlab/blob/main/assets/logo.png" alt="Current VPN Toolkit Logo" width="200"/>
 </p>
 
 <h1 align="center">🔐 Current VPN Toolkit</h1>
