@@ -47,17 +47,11 @@ A simple, command-line based toolkit for Termux and other Linux systems to perfo
     ```
 
 4.  **Run the toolkit:**
-    You need to provide a log file as an argument.
+    Simply run the script without any arguments.
     ```bash
-    bash vpnlab.sh /path/to/your/vpn.log
+    bash vpnlab.sh
     ```
-    *Example with a sample log:*
-    ```bash
-    bash vpnlab.sh sample.log
-    ```
-
----
-
+    **Important:** The first time you run the script, it will ask for permission to access your internal storage. You must tap **"Allow"**. The script will then automatically create a folder at `/sdcard/Current-vpnlab` and generate a log file named `video_list.log` inside it before running the tests.
 ### ⚠️ Disclaimer
 
 This tool is for educational and testing purposes only. Use it responsibly to check your own VPN's security. The author is not responsible for any misuse.
