@@ -31,7 +31,7 @@ mkdir -p "$STORAGE_FOLDER"
 sleep 1
 
 # --- Step 2: Create Log File from Video List ---
-LOG_FILE="$STORAGE_FOLDER/video_list.log"
+LOG_FILE="$STORAGE_FOLDER/vpnlab.log"
 echo -e "\n${CYAN}[*] Step 2: Scanning for video files in internal storage...${NC}"
 echo -e "${YELLOW}[!] This might take some time depending on your files...${NC}"
 
