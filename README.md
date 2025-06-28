@@ -33,12 +33,12 @@ A simple, command-line based toolkit for Termux and other Linux systems to perfo
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/currentvai/Current-vpnlab.git
     ```
 
 2.  **Navigate to the directory:**
     ```bash
-    cd your-repo-name
+    cd Current-vpnlab
     ```
 
 3.  **Make the main script executable (optional but good practice):**
