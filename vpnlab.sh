@@ -15,7 +15,7 @@ echo "██            ██    ██ ██   ██ ████   ██ �
 echo "██      █████ ██    ██ ██████  ██ ██  ██ ██      ███████ ██████  "
 echo "██             ██  ██  ██      ██  ██ ██ ██      ██   ██ ██   ██ "
 echo " ██████         ████   ██      ██   ████ ███████ ██   ██ ██████  "
-echo "              ${GREEN}v2.0 - IP and DNS Leak Checker${NC}"
+echo "              ${GREEN}v2.1 - IP and DNS Leak Checker${NC}"
 echo ""
 echo -e "${YELLOW}This tool checks your public IP address and DNS servers.${NC}"
 echo -e "${YELLOW}Run it once WITHOUT VPN, and once WITH VPN to see the difference.${NC}"
@@ -24,16 +24,16 @@ echo -e "${YELLOW}Run it once WITHOUT VPN, and once WITH VPN to see the differen
 echo -e "\n${CYAN}[*] Step 1: Checking Public IP Address...${NC}"
 echo "-----------------------------------------------------"
 
-# ifconfig.me ব্যবহার করে পাবলিক আইপি বের করা
-PUBLIC_IP=$(curl -s ifconfig.me)
+# ip-api.com ব্যবহার করে সব তথ্য একসাথে আনা
+API_RESPONSE=$(curl -s http://ip-api.com/json)
+PUBLIC_IP=$(echo "$API_RESPONSE" | jq -r '.query')
 
-if [ -z "$PUBLIC_IP" ]; then
+if [ -z "$PUBLIC_IP" ] || [ "$PUBLIC_IP" == "null" ]; then
     echo -e "${RED}[!] Could not fetch Public IP. Check your internet connection.${NC}"
 else
-    # whois.ipip.net দিয়ে আইপি-র দেশ ও মালিক খুঁজে বের করা
-    country_org=$(curl -s "https://whois.ipip.net/json/${PUBLIC_IP}" | jq -r '.data.country, .data.owner' | tr '\n' ' ' | sed 's/ $//')
+    PROVIDER_INFO=$(echo "$API_RESPONSE" | jq -r '.country, .isp' | tr '\n' ' ' | sed 's/ $//')
     echo -e "${GREEN}Your Public IP is: ${YELLOW}${PUBLIC_IP}${NC}"
-    echo -e "${GREEN}Provider Info:     ${CYAN}${country_org}${NC}"
+    echo -e "${GREEN}Provider Info:     ${CYAN}${PROVIDER_INFO}${NC}"
 fi
 echo "-----------------------------------------------------"
 sleep 1
