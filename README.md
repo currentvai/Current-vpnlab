@@ -2,30 +2,44 @@
   <img src="https://github.com/currentvai/Current-vpnlab/blob/main/assets/logo.png" alt="Current VPN Toolkit Logo" width="200"/>
 </p>
 
-<# 🔰 VPN Leak Toolkit
 
-A simple, command-line based toolkit for Termux and other Linux systems to perform basic VPN leak tests. Designed with a hacker-style interface for a better user experience.
+# 🔰 Current-vpnlab v1.1 - VPN Leak Tester
 
-![Demo Image/GIF](link_to_your_screenshot.png) <!-- আপনি একটি স্ক্রিনশট তুলে এখানে লিঙ্ক দিতে পারেন -->
+A simple, fast, and effective command-line tool to check for common IP, DNS, and WebRTC leaks, helping you verify if your VPN is working correctly and protecting your real IP address.
+
+![Banner](link_to_your_banner_screenshot.png) <!-- Optional: Add a screenshot of your tool in action -->
 
 ---
 
 ### ✨ Features
 
--   **🌐 WebRTC Leak Test:** Opens a test page to check for WebRTC IP leaks.
--   **🛡️ DNS Leak Test:** Checks if your DNS queries are leaking your real ISP's address.
--   **🧠 VPN Log Analyzer:** Scans a log file to find and list all unique IP addresses.
--   **💻 Hacker-Style Interface:** Uses colors and symbols for a cool and readable output.
--   **📱 Termux Ready:** Optimized for use on mobile with Termux.
+-   **🌐 Public IP Check:** Quickly finds your current public IP address and shows your ISP and country.
+-   **🛡️ DNS Leak Check:** Lists the DNS servers your system is currently using to resolve domain names.
+-
+-   **🕵️‍♂️ WebRTC Leak Check:** Detects potential IP leaks through your browser's WebRTC functionality.
+-   **💻 Clean CLI Interface:** Uses colors for a clear, readable, and professional output directly in your terminal.
+-   **📱 Termux Ready:** Fully optimized for use on mobile with Termux, with automatic dependency installation.
 
 ---
 
-### ⚙️ Prerequisites
+### 🤔 How to Test Your VPN
 
--   A Linux-based system (Termux recommended)
--   `git`
--   `python`
--   `dnsutils` (the script will try to install it automatically)
+The best way to use this tool is to run it twice and compare the results:
+
+1.  **Run WITHOUT VPN:**
+    ```bash
+    bash vpnlab.sh
+    ```
+    Note down your **real Public IP**, your **ISP's DNS servers**, and any IPs shown in the **WebRTC** section.
+
+2.  **Run WITH VPN:**
+    - Connect to your VPN.
+    - Run the script again:
+      ```bash
+      bash vpnlab.sh
+      ```
+
+**🔎 Compare the results:** If your VPN is working correctly, the Public IP, DNS Servers, and any WebRTC IPs in the second run should be **completely different** from the first run. They should now belong to your VPN provider, and your real IP should not be visible anywhere.
 
 ---
 
@@ -33,7 +47,7 @@ A simple, command-line based toolkit for Termux and other Linux systems to perfo
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/currentvai/Current-vpnlab.git
+    git clone https://github.com/your-github-username/Current-vpnlab.git
     ```
 
 2.  **Navigate to the directory:**
@@ -41,23 +55,18 @@ A simple, command-line based toolkit for Termux and other Linux systems to perfo
     cd Current-vpnlab
     ```
 
-3.  **Make the main script executable (optional but good practice):**
-    ```bash
-    chmod +x vpnlab.sh
-    ```
-
-4.  **Run the toolkit:**
-    Simply run the script without any arguments.
+3.  **Run the tester:**
     ```bash
     bash vpnlab.sh
     ```
-    **Important:** The first time you run the script, it will ask for permission to access your internal storage. You must tap **"Allow"**. The script will then automatically create a folder at `/sdcard/Current-vpnlab` and generate a log file named `video_list.log` inside it before running the tests.
+---
+
 ### ⚠️ Disclaimer
 
-This tool is for educational and testing purposes only. Use it responsibly to check your own VPN's security. The author is not responsible for any misuse.
+This tool is for educational and testing purposes only. Use it responsibly to verify your own connection's privacy.
 
-🔐 License
-This project is licensed under the MIT License
-© 2025 Current Vai ♚
+---
+**Developed By Current Vai ♚**
+*© Copyright $(date +%Y) — All Rights Reserved.*
 
 <h3 align="center">🛡️ Stay Private. Stay Secure. Stay Current ♚</h3> ```
