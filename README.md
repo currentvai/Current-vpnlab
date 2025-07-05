@@ -69,4 +69,4 @@ This tool is for educational and testing purposes only. Use it responsibly to ve
 **Developed By Current Vai ♚**
 *© Copyright $(date +%Y) — All Rights Reserved.*
 
-<h3 align="center">🛡️ Stay Private. Stay Secure. Stay Current ♚</h3> ```
+<h3 align="center">🛡️ Stay Private. Stay Secure. Stay Current ♚</h3> ``` 
